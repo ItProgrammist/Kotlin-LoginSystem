@@ -10,7 +10,7 @@ class DbHelper(val context: Context, val factory:SQLiteDatabase.CursorFactory?) 
     SQLiteOpenHelper(context, "app", factory, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
         val query = "CREATE TABLE users (id TNT PRIMARY KEY, login TEXT, email TEXT, password TEXT)"
-        // !! для обработки возможного значения db = NULL
+        // !! is used for the case:    db = NULL
         db!!.execSQL(query)
     }
 
